@@ -1,7 +1,7 @@
 {
   "name": "mdast-squeeze-paragraphs",
   "version": "1.1.0",
-  "description": "Remove empty paragraphs left from other mdast transformations",
+  "description": "Remove empty paragraphs from mdast tree",
   "author": "Eugene Sharygin <eush77@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -17,8 +17,6 @@
   },
   "keywords": [
     "mdast",
-    "plugin",
-    "markdown",
     "squeeze",
     "remove",
     "empty",
@@ -32,8 +30,6 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "clone": "^1.0.2",
-    "mdast": "^0.26.2",
     "tape": "^4.0.0"
   }
 }

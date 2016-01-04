@@ -4,11 +4,17 @@
 
 [![Build Status][travis-badge]][travis] [![Dependency Status][david-badge]][david]
 
-Remove empty paragraphs left from other [mdast] transformations.
+> :warning:
+>
+> This is an AST transformer for [mdast] syntax trees. A [remark] plugin has been split up into [a different project][remark-squeeze-paragraphs].
 
-Paragraph is considered empty if it is composed from whitespace characters.
+Remove empty paragraphs from [mdast] tree.
+
+Paragraph is considered empty if it is composed of whitespace characters only.
 
 [mdast]: https://github.com/wooorm/mdast
+[remark]: https://github.com/wooorm/remark
+[remark-squeeze-paragraphs]: https://github.com/eush77/remark-squeeze-paragraphs
 
 [travis]: https://travis-ci.org/eush77/mdast-squeeze-paragraphs
 [travis-badge]: https://travis-ci.org/eush77/mdast-squeeze-paragraphs.svg
@@ -18,33 +24,54 @@ Paragraph is considered empty if it is composed from whitespace characters.
 ## Example
 
 ```js
-> mdastSqueezeParagraphs = require('mdast-squeeze-paragraphs')
+var squeezeParagraphs = require('mdast-squeeze-paragraphs');
 
-> mdast.use(mdastStripBadges)
-       .process('![](http://img.shields.io/)\n\ntext')
-'\n\ntext\n'
+ast
+//=> {
+//     "type": "root",
+//     "children": [
+//       {
+//         "type": "paragraph",
+//         "children": []
+//       },
+//       {
+//         "type": "paragraph",
+//         "children": [
+//           {
+//             "type": "text",
+//             "value": "foo"
+//           }
+//         ]
+//       }
+//     ]
+//   }
 
-> mdast.use(mdastStripBadges)
-       .use(mdastSqueezeParagraphs)
-       .process('![](http://img.shields.io/)\n\ntext')
-'text\n'
+squeezeParagraphs(ast)
+//=> {
+//     "type": "root",
+//     "children": [
+//       {
+//         "type": "paragraph",
+//         "children": [
+//           {
+//             "type": "text",
+//             "value": "foo"
+//           }
+//         ]
+//       }
+//     ]
+//   }
 ```
 
 ## API
 
-```js
-var mdastSqueezeParagraphs = require('mdast-squeeze-paragraphs');
+#### `squeezeParagraphs(ast)`
 
-mdast.use(mdastSqueezeParagraphs)
-```
+Modifies AST in-place. Returns `ast`.
 
-Modifies AST in-place.
+## Related
 
-## CLI
-
-```
-mdast -u mdast-squeeze-paragraphs
-```
+- [remark-squeeze-paragraphs] — [remark] plugin wrapper.
 
 ## Install
 

@@ -1,16 +1,14 @@
 'use strict';
 
-var mdastSqueezeParagraphs = require('..');
+var squeezeParagraphs = require('..');
 
-var test = require('tape'),
-    mdast = require('mdast'),
-    clone = require('clone');
+var test = require('tape');
 
 
 test(function (t) {
   var input = require('./input');
   var output = require('./output');
 
-  t.deepEqual(mdast.use(mdastSqueezeParagraphs).run(input), output);
+  t.deepEqual(squeezeParagraphs(input), output);
   t.end();
 });
