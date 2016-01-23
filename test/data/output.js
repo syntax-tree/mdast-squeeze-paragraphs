@@ -12,6 +12,14 @@ module.exports = function () {
       u('text', 'second'),
       u('text', ' '),
       u('text', 'value')
+    ]),
+    u('list', {
+      ordered: false,
+      start: null,
+      loose: false
+    }, [
+      u('listItem', { loose: false }, []),
+      u('listItem', { loose: false }, [])
     ])
   ]);
 };

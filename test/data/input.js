@@ -19,6 +19,21 @@ module.exports = function () {
       u('text', ' '),
       u('text', 'value')
     ]),
-    u('paragraph', [])
+    u('paragraph', []),
+    u('list', {
+      ordered: false,
+      start: null,
+      loose: false
+    }, [
+      u('listItem', { loose: false }, [
+        u('paragraph', [])
+      ]),
+      u('listItem', { loose: false }, [
+        u('paragraph', [
+          u('text', ' '),
+          u('text', ' ')
+        ])
+      ])
+    ])
   ]);
 };
