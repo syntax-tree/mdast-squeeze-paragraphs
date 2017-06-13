@@ -6,9 +6,9 @@
 
 > :warning:
 >
-> This is an AST transformer for [mdast] syntax trees. A [remark] plugin has been split up into [a different project][remark-squeeze-paragraphs].
+> This is an AST transformer for [mdast][] syntax trees. A [remark][] plugin has been split up into [a different project][remark-squeeze-paragraphs].
 
-Remove empty paragraphs from [mdast] tree.
+Remove empty paragraphs from [mdast][] tree.
 
 Paragraph is considered empty if it is composed of whitespace characters only.
 
@@ -71,7 +71,7 @@ Modifies AST in-place. Returns `ast`.
 
 ## Related
 
-- [remark-squeeze-paragraphs] — [remark] plugin wrapper.
+-   [remark-squeeze-paragraphs][] — [remark][] plugin wrapper.
 
 ## Install
 
