@@ -12,7 +12,7 @@ Remove empty paragraphs from [mdast][] tree.
 
 Paragraph is considered empty if it is composed of whitespace characters only.
 
-[mdast]: https://github.com/wooorm/mdast
+[mdast]: https://github.com/syntax-tree/mdast
 [remark]: https://github.com/wooorm/remark
 [remark-squeeze-paragraphs]: https://github.com/eush77/remark-squeeze-paragraphs
 
