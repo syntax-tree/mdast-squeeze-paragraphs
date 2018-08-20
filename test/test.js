@@ -1,13 +1,11 @@
-'use strict';
+'use strict'
 
-var squeezeParagraphs = require('..'),
-    input = require('./data/input'),
-    output = require('./data/output');
+var test = require('tape')
+var output = require('./data/output')
+var input = require('./data/input')
+var squeezeParagraphs = require('..')
 
-var test = require('tape');
-
-
-test(function (t) {
-  t.deepEqual(squeezeParagraphs(input()), output());
-  t.end();
-});
+test(function(t) {
+  t.deepEqual(squeezeParagraphs(input()), output())
+  t.end()
+})

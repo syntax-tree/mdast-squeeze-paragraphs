@@ -1,16 +1,20 @@
-'use strict';
+'use strict'
 
-var remove = require('unist-util-remove');
+var remove = require('unist-util-remove')
 
+module.exports = squeeze
 
-module.exports = function (ast) {
-  return remove(ast, { cascade: false }, isEmptyParagraph);
-};
+var whiteSpaceOnly = /^\s*$/
 
+function squeeze(ast) {
+  return remove(ast, {cascade: false}, isEmptyParagraph)
+}
 
 // Whether paragraph is empty or composed only of whitespace.
-function isEmptyParagraph (node) {
-  return node.type == 'paragraph' && node.children.every(function (node) {
-    return node.type == 'text' && /^\s*$/.test(node.value);
-  });
+function isEmptyParagraph(node) {
+  return node.type === 'paragraph' && node.children.every(isEmptyText)
+}
+
+function isEmptyText(node) {
+  return node.type === 'text' && whiteSpaceOnly.test(node.value)
 }

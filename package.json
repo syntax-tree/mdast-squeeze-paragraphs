@@ -30,10 +30,25 @@
     "unist-util-remove": "^1.0.0"
   },
   "devDependencies": {
+    "prettier": "^1.14.2",
     "tape": "^4.0.0",
-    "unist-builder": "^1.0.0"
+    "unist-builder": "^1.0.0",
+    "xo": "^0.22.0"
   },
   "scripts": {
+    "format": "prettier --write \"**/*.js\" && xo --fix",
     "test": "tape test/*.js"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false
   }
 }
