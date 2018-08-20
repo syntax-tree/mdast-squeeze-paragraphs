@@ -1,84 +1,87 @@
-[![npm](https://nodei.co/npm/mdast-squeeze-paragraphs.png)](https://npmjs.com/package/mdast-squeeze-paragraphs)
+# mdast-squeeze-paragraphs [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
 
-# mdast-squeeze-paragraphs
+Remove empty paragraphs from [**mdast**][mdast] syntax trees.
 
-[![Build Status][travis-badge]][travis] [![Dependency Status][david-badge]][david]
+Paragraphs are considered empty if they do not contain non-whitespace
+characters.
 
-> :warning:
->
-> This is an AST transformer for [mdast][] syntax trees. A [remark][] plugin has been split up into [a different project][remark-squeeze-paragraphs].
+## Installation
 
-Remove empty paragraphs from [mdast][] tree.
+[npm][]:
 
-Paragraph is considered empty if it is composed of whitespace characters only.
+```bash
+npm install mdast-squeeze-paragraphs
+```
 
-[mdast]: https://github.com/syntax-tree/mdast
-[remark]: https://github.com/wooorm/remark
-[remark-squeeze-paragraphs]: https://github.com/eush77/remark-squeeze-paragraphs
-
-[travis]: https://travis-ci.org/eush77/mdast-squeeze-paragraphs
-[travis-badge]: https://travis-ci.org/eush77/mdast-squeeze-paragraphs.svg
-[david]: https://david-dm.org/eush77/mdast-squeeze-paragraphs
-[david-badge]: https://david-dm.org/eush77/mdast-squeeze-paragraphs.png
-
-## Example
+## Usage
 
 ```js
-var squeezeParagraphs = require('mdast-squeeze-paragraphs');
+var u = require('unist-builder')
+var squeezeParagraphs = require('mdast-squeeze-paragraphs')
 
-ast
-//=> {
-//     "type": "root",
-//     "children": [
-//       {
-//         "type": "paragraph",
-//         "children": []
-//       },
-//       {
-//         "type": "paragraph",
-//         "children": [
-//           {
-//             "type": "text",
-//             "value": "foo"
-//           }
-//         ]
-//       }
-//     ]
-//   }
+var tree = u('root', [
+  u('paragraph', []),
+  u('paragraph', [u('text', 'Alpha')]),
+  u('paragraph', [u('text', ' ')])
+])
 
-squeezeParagraphs(ast)
-//=> {
-//     "type": "root",
-//     "children": [
-//       {
-//         "type": "paragraph",
-//         "children": [
-//           {
-//             "type": "text",
-//             "value": "foo"
-//           }
-//         ]
-//       }
-//     ]
-//   }
+squeezeParagraphs(tree)
+
+console.dir(tree, {depth: null})
+```
+
+Yields:
+
+```js
+{ type: 'root',
+  children:
+   [ { type: 'paragraph',
+       children: [ { type: 'text', value: 'Alpha' } ] } ] }
 ```
 
 ## API
 
-#### `squeezeParagraphs(ast)`
+### `squeezeParagraphs(tree)`
 
-Modifies AST in-place. Returns `ast`.
+Modifies tree in-place.  Returns `tree`.
 
 ## Related
 
--   [remark-squeeze-paragraphs][] — [remark][] plugin wrapper.
+*   [`remark-squeeze-paragraphs`][squeeze-paragraphs]
+    — [**remark**][remark] plugin wrapper
 
-## Install
+## Contribute
 
-```
-npm install mdast-squeeze-paragraphs
-```
+See [`contributing.md` in `syntax-tree/mdast`][contributing] for ways to get
+started.
+
+This organisation has a [Code of Conduct][coc].  By interacting with this
+repository, organisation, or community you agree to abide by its terms.
 
 ## License
 
-MIT
+[MIT][license] © Eugene Sharygin
+
+<!-- Definitions -->
+
+[travis-badge]: https://img.shields.io/travis/syntax-tree/mdast-squeeze-paragraphs.svg
+
+[travis]: https://travis-ci.org/syntax-tree/mdast-squeeze-paragraphs
+
+[codecov-badge]: https://img.shields.io/codecov/c/github/syntax-tree/mdast-squeeze-paragraphs.svg
+
+[codecov]: https://codecov.io/github/syntax-tree/mdast-squeeze-paragraphs
+
+[npm]: https://docs.npmjs.com/cli/install
+
+[license]: license
+
+[contributing]: https://github.com/syntax-tree/mdast/blob/master/contributing.md
+
+[coc]: https://github.com/syntax-tree/mdast/blob/master/code-of-conduct.md
+
+[mdast]: https://github.com/syntax-tree/mdast
+
+[remark]: https://github.com/remarkjs/remark
+
+[squeeze-paragraphs]: https://github.com/remarkjs/remark-squeeze-paragraphs
