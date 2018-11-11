@@ -1,4 +1,4 @@
-# mdast-squeeze-paragraphs [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# mdast-squeeze-paragraphs [![Build][build-badge]][build] [![Coverage][coverage-badge]][coverage] [![Downloads][downloads-badge]][downloads] [![Chat][chat-badge]][chat]
 
 Remove empty paragraphs from [**mdast**][mdast] syntax trees.
 
@@ -64,13 +64,21 @@ repository, organisation, or community you agree to abide by its terms.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/syntax-tree/mdast-squeeze-paragraphs.svg
+[build-badge]: https://img.shields.io/travis/syntax-tree/mdast-squeeze-paragraphs.svg
 
-[travis]: https://travis-ci.org/syntax-tree/mdast-squeeze-paragraphs
+[build]: https://travis-ci.org/syntax-tree/mdast-squeeze-paragraphs
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/syntax-tree/mdast-squeeze-paragraphs.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/mdast-squeeze-paragraphs.svg
 
-[codecov]: https://codecov.io/github/syntax-tree/mdast-squeeze-paragraphs
+[coverage]: https://codecov.io/github/syntax-tree/mdast-squeeze-paragraphs
+
+[downloads-badge]: https://img.shields.io/npm/dm/mdast-squeeze-paragraphs.svg
+
+[downloads]: https://www.npmjs.com/package/mdast-squeeze-paragraphs
+
+[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+
+[chat]: https://spectrum.chat/unified/remark
 
 [npm]: https://docs.npmjs.com/cli/install
 
