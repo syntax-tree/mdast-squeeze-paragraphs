@@ -16,8 +16,8 @@
     "util",
     "clean"
   ],
-  "repository": "syntax-tree/mdast-squeeze-headings",
-  "bugs": "https://github.com/syntax-tree/mdast-squeeze-headings/issues",
+  "repository": "syntax-tree/mdast-squeeze-paragraphs",
+  "bugs": "https://github.com/syntax-tree/mdast-squeeze-paragraphs/issues",
   "author": "Eugene Sharygin <eush77@gmail.com>",
   "contributors": [
     "Eugene Sharygin <eush77@gmail.com>",
