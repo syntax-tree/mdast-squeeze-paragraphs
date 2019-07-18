@@ -54,6 +54,11 @@ Yields:
 Modifies [tree][] in-place.
 Returns `tree`.
 
+## Security
+
+Use of `mdast-squeeze-paragraphs` does not involve [**hast**][hast] or user
+content so there are no openings for [cross-site scripting (XSS)][xss] attacks.
+
 ## Related
 
 *   [`remark-squeeze-paragraphs`][squeeze-paragraphs]
@@ -118,3 +123,7 @@ abide by its terms.
 [remark]: https://github.com/remarkjs/remark
 
 [squeeze-paragraphs]: https://github.com/remarkjs/remark-squeeze-paragraphs
+
+[xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+
+[hast]: https://github.com/syntax-tree/hast
