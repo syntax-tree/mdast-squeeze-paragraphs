@@ -34,7 +34,7 @@
     "index.js"
   ],
   "dependencies": {
-    "unist-util-remove": "^1.0.0"
+    "unist-util-remove": "^2.0.0"
   },
   "devDependencies": {
     "nyc": "^15.0.0",
