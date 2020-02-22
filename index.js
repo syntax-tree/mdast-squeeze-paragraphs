@@ -6,8 +6,8 @@ module.exports = squeeze
 
 var whiteSpaceOnly = /^\s*$/
 
-function squeeze(ast) {
-  return remove(ast, {cascade: false}, isEmptyParagraph)
+function squeeze(tree) {
+  return remove(tree, {cascade: false}, isEmptyParagraph)
 }
 
 // Whether paragraph is empty or composed only of whitespace.
