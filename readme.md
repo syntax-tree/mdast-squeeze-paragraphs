@@ -64,7 +64,7 @@ content so there are no openings for [cross-site scripting (XSS)][xss] attacks.
 *   [`remark-squeeze-paragraphs`][squeeze-paragraphs]
     — [**remark**][remark] plugin wrapper
 *   [`mdast-util-compact`](https://github.com/syntax-tree/mdast-util-compact)
-    — make an mdast tree compact
+    — make a tree compact
 
 ## Contribute
 
