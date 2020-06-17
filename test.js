@@ -4,7 +4,7 @@ var test = require('tape')
 var u = require('unist-builder')
 var squeezeParagraphs = require('.')
 
-test(function(t) {
+test(function (t) {
   t.deepEqual(
     squeezeParagraphs(
       u('root', [
