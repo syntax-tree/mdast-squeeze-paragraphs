@@ -4,8 +4,6 @@ var remove = require('unist-util-remove')
 
 module.exports = squeeze
 
-var whiteSpaceOnly = /^\s*$/
-
 function squeeze(tree) {
   return remove(tree, {cascade: false}, isEmptyParagraph)
 }
@@ -16,5 +14,5 @@ function isEmptyParagraph(node) {
 }
 
 function isEmptyText(node) {
-  return node.type === 'text' && whiteSpaceOnly.test(node.value)
+  return node.type === 'text' && /^\s*$/.test(node.value)
 }
