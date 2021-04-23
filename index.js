@@ -10,9 +10,10 @@ function squeeze(tree) {
 
 // Whether paragraph is empty or composed only of whitespace.
 function isEmptyParagraph(node) {
-  return node.type === 'paragraph' && node.children.every(isEmptyText)
-}
-
-function isEmptyText(node) {
-  return node.type === 'text' && /^\s*$/.test(node.value)
+  return (
+    node.type === 'paragraph' &&
+    node.children.every(
+      (node) => node.type === 'text' && /^\s*$/.test(node.value)
+    )
+  )
 }
