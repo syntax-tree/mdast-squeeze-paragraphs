@@ -1,8 +1,6 @@
-'use strict'
-
-var test = require('tape')
-var u = require('unist-builder')
-var squeezeParagraphs = require('.')
+import test from 'tape'
+import {u} from 'unist-builder'
+import {squeezeParagraphs} from './index.js'
 
 test(function (t) {
   t.deepEqual(

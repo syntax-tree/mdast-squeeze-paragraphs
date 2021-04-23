@@ -15,6 +15,9 @@ characters.
 
 ## Install
 
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
+Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -24,8 +27,8 @@ npm install mdast-squeeze-paragraphs
 ## Use
 
 ```js
-var u = require('unist-builder')
-var squeezeParagraphs = require('mdast-squeeze-paragraphs')
+import {u} from 'unist-builder'
+import {squeezeParagraphs} from 'mdast-squeeze-paragraphs'
 
 var tree = u('root', [
   u('paragraph', []),
@@ -48,6 +51,9 @@ Yields:
 ```
 
 ## API
+
+This package exports the following identifiers: `squeezeParagraphs`.
+There is no default export.
 
 ### `squeezeParagraphs(tree)`
 

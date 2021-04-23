@@ -1,10 +1,6 @@
-'use strict'
+import {remove} from 'unist-util-remove'
 
-var remove = require('unist-util-remove')
-
-module.exports = squeeze
-
-function squeeze(tree) {
+export function squeezeParagraphs(tree) {
   return remove(tree, {cascade: false}, isEmptyParagraph)
 }
 
