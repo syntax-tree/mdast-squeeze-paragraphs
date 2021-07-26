@@ -22,10 +22,10 @@ export function squeezeParagraphs(tree) {
 function isEmptyParagraph(node) {
   return (
     node.type === 'paragraph' &&
-    // @ts-ignore paragraphs are parents.
+    // @ts-expect-error paragraphs are parents.
     node.children.every(
       (/** @type {Node} */ node) =>
-        // @ts-ignore texts are literals.
+        // @ts-expect-error texts are literals.
         node.type === 'text' && /^\s*$/.test(node.value)
     )
   )
