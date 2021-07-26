@@ -2,7 +2,7 @@ import test from 'tape'
 import {u} from 'unist-builder'
 import {squeezeParagraphs} from './index.js'
 
-test(function (t) {
+test((t) => {
   t.deepEqual(
     squeezeParagraphs(
       u('root', [

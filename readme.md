@@ -30,7 +30,7 @@ npm install mdast-squeeze-paragraphs
 import {u} from 'unist-builder'
 import {squeezeParagraphs} from 'mdast-squeeze-paragraphs'
 
-var tree = u('root', [
+const tree = u('root', [
   u('paragraph', []),
   u('paragraph', [u('text', 'Alpha')]),
   u('paragraph', [u('text', ' ')])
