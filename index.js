@@ -1,6 +1,5 @@
 /**
- * @typedef {import('unist').Node} Node
- * @typedef {import('unist-util-remove').TestFunctionAnything} TestFunction
+ * @typedef {import('mdast').Root|import('mdast').Content} Node
  */
 
 import {remove} from 'unist-util-remove'
@@ -8,25 +7,16 @@ import {remove} from 'unist-util-remove'
 /**
  * @template {Node} T
  * @param {T} tree
- * @returns {T}
+ * @returns {T|null}
  */
 export function squeezeParagraphs(tree) {
-  return remove(tree, {cascade: false}, isEmptyParagraph)
-}
-
-/**
- * Whether paragraph is empty or composed only of whitespace.
- *
- * @type {TestFunction}
- */
-function isEmptyParagraph(node) {
-  return (
-    node.type === 'paragraph' &&
-    // @ts-expect-error paragraphs are parents.
-    node.children.every(
-      (/** @type {Node} */ node) =>
-        // @ts-expect-error texts are literals.
-        node.type === 'text' && /^\s*$/.test(node.value)
+  return remove(tree, {cascade: false}, (node) =>
+    Boolean(
+      node.type === 'paragraph' &&
+        node.children.every(
+          (/** @type {Node} */ node) =>
+            node.type === 'text' && /^\s*$/.test(node.value)
+        )
     )
   )
 }
