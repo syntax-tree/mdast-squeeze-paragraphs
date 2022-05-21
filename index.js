@@ -6,6 +6,8 @@
 import {remove} from 'unist-util-remove'
 
 /**
+ * Remove empty paragraphs in `tree`.
+ *
  * @template {Node} Tree
  * @param {Tree} tree
  * @returns {Tree extends Paragraph ? Tree | null : Tree}
