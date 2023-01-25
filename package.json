@@ -1,6 +1,6 @@
 {
   "name": "mdast-squeeze-paragraphs",
-  "version": "5.2.0",
+  "version": "5.2.1",
   "description": "mdast utility to remove empty paragraphs from a tree",
   "license": "MIT",
   "keywords": [
