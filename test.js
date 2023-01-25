@@ -1,5 +1,6 @@
 /**
  * @typedef {import('mdast').Root} Root
+ * @typedef {import('mdast').Paragraph} Paragraph
  */
 
 import test from 'tape'
@@ -39,5 +40,12 @@ test((t) => {
       ])
     ])
   )
+
+  t.deepEqual(
+    squeezeParagraphs(/** @type {Paragraph} */ (u('paragraph', []))),
+    null,
+    'should return `null` for empty paragraphs'
+  )
+
   t.end()
 })

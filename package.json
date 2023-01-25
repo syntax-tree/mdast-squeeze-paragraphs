@@ -41,7 +41,7 @@
   ],
   "dependencies": {
     "@types/mdast": "^3.0.0",
-    "unist-util-remove": "^3.0.0"
+    "unist-util-visit": "^4.0.0"
   },
   "devDependencies": {
     "@types/tape": "^4.0.0",
