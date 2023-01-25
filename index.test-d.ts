@@ -1,5 +1,5 @@
 import {expectType} from 'tsd'
-import {Root, Heading, Paragraph} from 'mdast'
+import type {Root, Heading, Paragraph} from 'mdast'
 import {squeezeParagraphs} from './index.js'
 
 const root: Root = {type: 'root', children: []}
