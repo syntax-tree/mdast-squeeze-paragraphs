@@ -43,7 +43,7 @@ does the same but for [remark][].
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
+In Node.js (version 14.14+ and 16.0+), install with [npm][]:
 
 ```sh
 npm install mdast-util-squeeze-paragraphs
@@ -91,27 +91,33 @@ Yields:
 
 ## API
 
-This package exports the identifier `squeezeParagraphs`.
+This package exports the identifier
+[`squeezeParagraphs`][api-squeezeparagraphs].
 There is no default export.
 
 ### `squeezeParagraphs(tree)`
 
-Remove empty paragraphs in `tree` ([`Node`][node]).
+Remove empty paragraphs in `tree`.
+
+###### Parameters
+
+*   `tree` ([`Node`][node])
+    — tree to change
 
 ###### Returns
 
-The given `tree` ([`Node`][node]).
+Changed `tree` ([`Node`][node]), or `null` if it was an empty paragraph.
 
 ## Types
 
 This package is fully typed with [TypeScript][].
-There are no additional types exported.
+It exports no additional types..
 
 ## Compatibility
 
 Projects maintained by the unified collective are compatible with all maintained
 versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
+As of now, that is Node.js 14.14+ and 16.0+.
 Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Security
@@ -197,3 +203,5 @@ abide by its terms.
 [remark]: https://github.com/remarkjs/remark
 
 [remark-squeeze-paragraphs]: https://github.com/remarkjs/remark-squeeze-paragraphs
+
+[api-squeezeparagraphs]: #squeezeparagraphstree
