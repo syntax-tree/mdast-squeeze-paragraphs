@@ -46,20 +46,20 @@ This package is [ESM only][esm].
 In Node.js (version 14.14+ and 16.0+), install with [npm][]:
 
 ```sh
-npm install mdast-util-squeeze-paragraphs
+npm install mdast-squeeze-paragraphs
 ```
 
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {squeezeParagraphs} from 'https://esm.sh/mdast-util-squeeze-paragraphs@5'
+import {squeezeParagraphs} from 'https://esm.sh/mdast-squeeze-paragraphs@5'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {squeezeParagraphs} from 'https://esm.sh/mdast-util-squeeze-paragraphs@5?bundle'
+  import {squeezeParagraphs} from 'https://esm.sh/mdast-squeeze-paragraphs@5?bundle'
 </script>
 ```
 
