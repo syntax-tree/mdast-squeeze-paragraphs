@@ -106,7 +106,7 @@ Remove empty paragraphs in `tree`.
 
 ###### Returns
 
-Changed `tree` ([`Node`][node]), or `null` if it was an empty paragraph.
+Nothing (`undefined`).
 
 ## Types
 

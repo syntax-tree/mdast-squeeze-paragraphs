@@ -49,8 +49,6 @@
     "prettier": "^2.0.0",
     "remark-cli": "^11.0.0",
     "remark-preset-wooorm": "^9.0.0",
-    "tape": "^5.0.0",
-    "tsd": "^0.28.0",
     "type-coverage": "^2.0.0",
     "typescript": "^5.0.0",
     "unist-builder": "^4.0.0",
@@ -84,17 +82,6 @@
     "strict": true
   },
   "xo": {
-    "overrides": [
-      {
-        "files": [
-          "**/*.ts"
-        ],
-        "rules": {
-          "@typescript-eslint/ban-types": "off",
-          "@typescript-eslint/consistent-type-assertions": "off"
-        }
-      }
-    ],
     "prettier": true
   }
 }

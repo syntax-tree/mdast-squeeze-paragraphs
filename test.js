@@ -20,8 +20,10 @@ test('squeezeParagraphs', async function (t) {
       ])
     ])
 
+    squeezeParagraphs(tree)
+
     assert.deepEqual(
-      squeezeParagraphs(tree),
+      tree,
       u('root', [
         u('paragraph', [u('text', 'first')]),
         u('paragraph', [
@@ -37,9 +39,14 @@ test('squeezeParagraphs', async function (t) {
     )
   })
 
-  await t.test('should return `null` for empty paragraphs', async function () {
-    const tree = u('paragraph', [])
+  await t.test(
+    'should do nothing with a (empty or not) paragraph',
+    async function () {
+      const tree = u('paragraph', [])
 
-    assert.deepEqual(squeezeParagraphs(tree), null)
-  })
+      squeezeParagraphs(tree)
+
+      assert.deepEqual(tree, u('paragraph', []))
+    }
+  )
 })
