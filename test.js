@@ -1,9 +1,16 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
+import {squeezeParagraphs} from 'mdast-squeeze-paragraphs'
 import {u} from 'unist-builder'
-import {squeezeParagraphs} from './index.js'
 
 test('squeezeParagraphs', async function (t) {
+  await t.test('should expose the public api', async function () {
+    assert.deepEqual(
+      Object.keys(await import('mdast-squeeze-paragraphs')).sort(),
+      ['squeezeParagraphs']
+    )
+  })
+
   await t.test('should work on a tree', async function () {
     const tree = u('root', [
       u('paragraph', []),
