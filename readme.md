@@ -52,14 +52,14 @@ npm install mdast-squeeze-paragraphs
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {squeezeParagraphs} from 'https://esm.sh/mdast-squeeze-paragraphs@5'
+import {squeezeParagraphs} from 'https://esm.sh/mdast-squeeze-paragraphs@6'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {squeezeParagraphs} from 'https://esm.sh/mdast-squeeze-paragraphs@5?bundle'
+  import {squeezeParagraphs} from 'https://esm.sh/mdast-squeeze-paragraphs@6?bundle'
 </script>
 ```
 
