@@ -3,12 +3,13 @@
  * @typedef {import('mdast').Paragraph} Paragraph
  */
 
-import test from 'tape'
+import assert from 'node:assert/strict'
+import test from 'node:test'
 import {u} from 'unist-builder'
 import {squeezeParagraphs} from './index.js'
 
-test((t) => {
-  t.deepEqual(
+test('squeezeParagraphs', () => {
+  assert.deepEqual(
     squeezeParagraphs(
       /** @type {Root} */ (
         u('root', [
@@ -41,11 +42,9 @@ test((t) => {
     ])
   )
 
-  t.deepEqual(
+  assert.deepEqual(
     squeezeParagraphs(/** @type {Paragraph} */ (u('paragraph', []))),
     null,
     'should return `null` for empty paragraphs'
   )
-
-  t.end()
 })
