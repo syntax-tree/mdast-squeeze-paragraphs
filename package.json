@@ -84,9 +84,17 @@
     "strict": true
   },
   "xo": {
-    "prettier": true,
-    "rules": {
-      "@typescript-eslint/ban-types": "off"
-    }
+    "overrides": [
+      {
+        "files": [
+          "**/*.ts"
+        ],
+        "rules": {
+          "@typescript-eslint/ban-types": "off",
+          "@typescript-eslint/consistent-type-assertions": "off"
+        }
+      }
+    ],
+    "prettier": true
   }
 }
